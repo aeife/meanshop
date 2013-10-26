@@ -1,5 +1,6 @@
 angular.module( 'meanShop.shop', [
-  'ui.router'
+  'ui.router',
+  'meanShop.shop.shopCategory'
 ])
 
 .config(function config( $stateProvider ) {
@@ -17,7 +18,6 @@ angular.module( 'meanShop.shop', [
 
 .controller('ShopCtrl', function ($scope, store) {
   $scope.categories = store.getCategories();
-  $scope.products = store.getProducts();
 })
 
 ;
