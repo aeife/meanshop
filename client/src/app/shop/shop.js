@@ -15,7 +15,8 @@ angular.module( 'meanShop.shop', [
   });
 })
 
-.controller('ShopCtrl', function ($scope) {
+.controller('ShopCtrl', function ($scope, store) {
+  $scope.products = store.getProducts();
 })
 
 ;
