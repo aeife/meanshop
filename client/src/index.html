@@ -4,7 +4,7 @@
     <title ng-bind="pageTitle"></title>
 
     <!-- font awesome from BootstrapCDN -->
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
 
     <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
     <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
@@ -30,13 +30,19 @@
           <ul class="nav navbar-nav">
             <li ng-class="{active: $state.includes('home')}">
               <a href="#/home">
-                <i class="icon-home"></i>
+                <i class="fa fa-home"></i>
                 Home
+              </a>
+            </li>
+            <li ng-class="{active: $state.includes('shop')}">
+              <a href="#/shop">
+                <i class="fa fa-tag"></i>
+                Shop
               </a>
             </li>
             <li ng-class="{active: $state.includes('about')}">
               <a href="#/about">
-                <i class="icon-info-sign"></i>
+                <i class="fa fa-info-circle"></i>
                 About
               </a>
             </li>

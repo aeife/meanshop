@@ -3,6 +3,7 @@ angular.module( 'meanShop', [
   'templates-common',
   'meanShop.home',
   'meanShop.about',
+  'meanShop.shop',
   'ui.router',
   'store'
 ])
