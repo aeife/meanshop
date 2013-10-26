@@ -3,14 +3,14 @@ angular.module( 'store', [
 ])
 
 
-.factory('store', function (product) {
+.factory('store', function (Product) {
   // var Product = $resource('/product/:productId', {productId:'@id'});
   return {
     getAllProducts: function(){
-      return product.query();
+      return Product.query();
     },
     getProduct: function(productId){
-      return product.get({productId: productId});
+      return Product.get({productId: productId});
     }
   };
 })

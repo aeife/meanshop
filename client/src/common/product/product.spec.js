@@ -1,10 +1,10 @@
 describe( 'product factory', function() {
-  var product, $httpBackend;
+  var Product, $httpBackend;
 
   beforeEach(module('product'));
 
-  beforeEach(inject(function (_product_, _$httpBackend_){
-    product = _product_;
+  beforeEach(inject(function (_Product_, _$httpBackend_){
+    Product = _Product_;
     $httpBackend = _$httpBackend_;
   }));
 
@@ -20,7 +20,7 @@ describe( 'product factory', function() {
     .whenGET('/product')
     .respond(mockData);
 
-    var products = product.query();
+    var products = Product.query();
 
     $httpBackend.flush();
 

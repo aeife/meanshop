@@ -2,7 +2,7 @@ angular.module( 'product', [
   'ngResource'
 ])
 
-.factory('product', function ($resource) {
+.factory('Product', function ($resource) {
   return $resource('/product/:productId', {productId:'@id'});
 })
 
