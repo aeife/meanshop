@@ -1,0 +1,16 @@
+{
+  "name": "meanshopServer",
+  "description": "",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "~3.0.6"
+  },
+  "devDependencies": {
+    "rewire": "~2.0.0",
+    "supervisor": "~0.5.6",
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.7.0",
+    "grunt-contrib-nodeunit": "~0.2.2"
+  }
+}

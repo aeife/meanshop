@@ -1,0 +1,12 @@
+{
+  "name": "meanshopClient",
+  "version": "0.0.1",
+  "devDependencies": {
+    "angular": "~1.0.8",
+    "angular-mocks": "~1.0.8",
+    "bootstrap": "~3.0.0",
+    "angular-ui-router": "~0.2.0",
+    "angular-ui-utils": "~0.0.4"
+  },
+  "dependencies": {}
+}
