@@ -11,7 +11,7 @@ var productCount = 10;
 // insert users
 for (var i = 0; i < productCount; i++){
   db.products.insert({
-    title: Faker.Lorem.words(1),
+    title: Faker.Lorem.words(1)[0],
     description: Faker.Lorem.sentences(3),
     created: new Date()
   });
