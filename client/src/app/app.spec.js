@@ -35,5 +35,15 @@ describe( 'AppCtrl', function() {
       expect($scope.pageTitle).toBe('MeanShop');
     }));
 
+    it('should only display current title after multiple changes', inject(function($state, $q){
+      $state.transitionTo('about', {});
+      $scope.$apply();
+
+      $state.transitionTo('home', {});
+      $scope.$apply();
+
+      expect($scope.pageTitle).toBe('Home | MeanShop');
+    }));
+
   });
 });
