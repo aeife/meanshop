@@ -3,7 +3,8 @@ angular.module( 'meanShop', [
   'templates-common',
   'meanShop.home',
   'meanShop.about',
-  'ui.router'
+  'ui.router',
+  'store'
 ])
 
 .config( function myAppConfig ($stateProvider, $urlRouterProvider) {
