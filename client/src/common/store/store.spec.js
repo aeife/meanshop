@@ -20,7 +20,7 @@ describe( 'store factory', function() {
     .whenGET('/products')
     .respond(mockData);
 
-    var products = store.getAllProducts();
+    var products = store.getProducts();
 
     $httpBackend.flush();
 

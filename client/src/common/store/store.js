@@ -4,16 +4,15 @@ angular.module( 'store', [
 
 
 .factory('store', function (Product) {
-  // var Product = $resource('/product/:productId', {productId:'@id'});
   return {
-    getAllProducts: function(){
+    getProducts: function(){
       return Product.query();
-    },
-    getProduct: function(productId){
-      return Product.get({productId: productId});
     },
     getProductsByCategory: function(cat){
       return Product.query({categoryId: cat});
+    },
+    getProduct: function(productId){
+      return Product.get({productId: productId});
     }
   };
 })
