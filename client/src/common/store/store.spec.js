@@ -13,45 +13,65 @@ describe( 'store factory', function() {
     $httpBackend.verifyNoOutstandingRequest();
   });
 
-  it('should get all products', inject( function() {
-    var mockData = [{name: 'Product1'}, {name: 'Product2'}];
+  describe( 'store GET methods', function() {
 
-    $httpBackend
-    .whenGET('/products')
-    .respond(mockData);
+    it('should get all products', inject( function() {
+      var mockData = [{name: 'Product1'}, {name: 'Product2'}];
 
-    var products = store.getProducts();
+      $httpBackend
+      .whenGET('/products')
+      .respond(mockData);
 
-    $httpBackend.flush();
+      var products = store.getProducts();
 
-    expect(products.length).toEqual(2);
-  }));
+      $httpBackend.flush();
 
-  it('should get specific products', inject( function() {
-    var mockData = {name: 'Product1'};
+      expect(products.length).toEqual(2);
+    }));
 
-    $httpBackend
-    .whenGET('/products/1')
-    .respond(mockData);
+    it('should get specific products', inject( function() {
+      var mockData = {name: 'Product1'};
 
-    var product = store.getProduct(1);
+      $httpBackend
+      .whenGET('/products/1')
+      .respond(mockData);
 
-    $httpBackend.flush();
+      var product = store.getProduct(1);
 
-    expect(product.name).toEqual('Product1');
-  }));
+      $httpBackend.flush();
 
-  it('should get products of category', inject( function() {
-    var mockData = [{name: 'Product1', categoryId: 1}, {name: 'Product2', categoryId: 1}];
+      expect(product.name).toEqual('Product1');
+    }));
 
-    $httpBackend
-    .whenGET('/products?categoryId=1')
-    .respond(mockData);
+    it('should get products of category', inject( function() {
+      var mockData = [{name: 'Product1', categoryId: 1}, {name: 'Product2', categoryId: 1}];
 
-    var products = store.getProductsByCategory(1);
-    console.log(products);
-    $httpBackend.flush();
+      $httpBackend
+      .whenGET('/products?categoryId=1')
+      .respond(mockData);
 
-    expect(products.length).toEqual(2);
-  }));
+      var products = store.getProductsByCategory(1);
+      console.log(products);
+      $httpBackend.flush();
+
+      expect(products.length).toEqual(2);
+    }));
+
+  });
+
+  describe( 'store POST methods', function() {
+
+    it('should add a new product', inject( function() {
+      $httpBackend
+      .expectPOST('/products', {
+        name: 'Product1'
+      })
+      .respond(201, '');
+
+      var products = store.addProduct({name: 'Product1'});
+
+      $httpBackend.flush();
+    }));
+
+  });
 });

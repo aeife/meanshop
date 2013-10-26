@@ -13,6 +13,12 @@ angular.module( 'store', [
     },
     getProduct: function(productId){
       return Product.get({productId: productId});
+    },
+    addProduct: function(productData){
+      var product = new Product({
+        name: productData.name
+      });
+      return product.$save();
     }
   };
 })
