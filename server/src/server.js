@@ -6,7 +6,7 @@ var app = express();
 var server = http.createServer(app);
 
 app.configure(function(){
-  app.set('port', 3000);
+  app.set('port', config.server.listenPort);
   app.use(express.bodyParser());
   app.use(express.logger('dev'));
   // app.use(require('grunt-contrib-livereload/lib/utils').livereloadSnippet);
