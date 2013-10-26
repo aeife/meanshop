@@ -2,7 +2,7 @@ var path = require('path');
 
 module.exports = {
   mongoDB: {
-    url: 'mongodb://localhost',
+    url: 'mongodb://localhost/meanshop',
   },
   server: {
     listenPort: 3000,
