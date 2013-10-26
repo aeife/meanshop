@@ -1,6 +1,4 @@
 var mongoose = require('mongoose');
-var config = require('../config.js');
-mongoose.connect(config.mongoDB.url);
 
 var productSchema = mongoose.Schema({
   title: String,

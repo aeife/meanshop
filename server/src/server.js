@@ -22,7 +22,12 @@ server.listen(app.get('port'), function(){
   console.log('Express server listening on port2s ' + app.get('port'));
 });
 
+// database
+var mongoose = require('mongoose');
+mongoose.connect(config.mongoDB.url);
+
 var routes = require('./routes.js');
 routes.addRoutes(app, {
-  products: require('./routes/products.js')
+  products: require('./routes/products.js'),
+  categories: require('./routes/categories.js')
 });
