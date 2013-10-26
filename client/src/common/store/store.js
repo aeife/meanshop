@@ -1,5 +1,6 @@
 angular.module( 'store', [
-  'product'
+  'product',
+  'category'
 ])
 
 
