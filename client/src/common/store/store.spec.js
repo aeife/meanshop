@@ -1,5 +1,5 @@
 describe( 'store factory', function() {
-  var product, $httpBackend;
+  var store, $httpBackend;
 
   beforeEach(module('store'));
 
@@ -39,5 +39,19 @@ describe( 'store factory', function() {
     $httpBackend.flush();
 
     expect(product.name).toEqual('Product1');
+  }));
+
+  it('should get products of category', inject( function() {
+    var mockData = [{name: 'Product1', categoryId: 1}, {name: 'Product2', categoryId: 1}];
+
+    $httpBackend
+    .whenGET('/product?categoryId=1')
+    .respond(mockData);
+
+    var products = store.getProductsByCategory(1);
+    console.log(products);
+    $httpBackend.flush();
+
+    expect(products.length).toEqual(2);
   }));
 });
