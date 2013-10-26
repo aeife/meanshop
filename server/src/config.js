@@ -1,8 +1,8 @@
 var path = require('path');
 
 module.exports = {
-  mongo: {
-    dbUrl: 'mongodb://localhost',
+  mongoDB: {
+    url: 'mongodb://localhost',
   },
   server: {
     listenPort: 3000,
