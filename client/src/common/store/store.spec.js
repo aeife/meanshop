@@ -17,7 +17,7 @@ describe( 'store factory', function() {
     var mockData = [{name: 'Product1'}, {name: 'Product2'}];
 
     $httpBackend
-    .whenGET('/product')
+    .whenGET('/products')
     .respond(mockData);
 
     var products = store.getAllProducts();
@@ -31,7 +31,7 @@ describe( 'store factory', function() {
     var mockData = {name: 'Product1'};
 
     $httpBackend
-    .whenGET('/product/1')
+    .whenGET('/products/1')
     .respond(mockData);
 
     var product = store.getProduct(1);
@@ -45,7 +45,7 @@ describe( 'store factory', function() {
     var mockData = [{name: 'Product1', categoryId: 1}, {name: 'Product2', categoryId: 1}];
 
     $httpBackend
-    .whenGET('/product?categoryId=1')
+    .whenGET('/products?categoryId=1')
     .respond(mockData);
 
     var products = store.getProductsByCategory(1);

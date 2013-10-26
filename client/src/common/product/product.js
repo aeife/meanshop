@@ -3,7 +3,7 @@ angular.module( 'product', [
 ])
 
 .factory('Product', function ($resource) {
-  return $resource('/product/:productId', {productId:'@id'});
+  return $resource('/products/:productId', {productId:'@id'});
 })
 
 ;

@@ -17,7 +17,7 @@ describe( 'product factory', function() {
     var mockData = [{name: 'Product1'}, {name: 'Product2'}];
 
     $httpBackend
-    .whenGET('/product')
+    .whenGET('/products')
     .respond(mockData);
 
     var products = Product.query();
