@@ -19,5 +19,5 @@ app.configure('development', function(){
 
 // start server
 server.listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
+  console.log('Express server listening on port2s ' + app.get('port'));
 });
