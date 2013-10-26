@@ -13,7 +13,7 @@ describe( 'store factory', function() {
     $httpBackend.verifyNoOutstandingRequest();
   });
 
-  describe( 'store GET methods', function() {
+  describe( 'store product methods', function() {
 
     it('should get all products', inject( function() {
       var mockData = [{name: 'Product1'}, {name: 'Product2'}];
@@ -57,10 +57,6 @@ describe( 'store factory', function() {
       expect(products.length).toEqual(2);
     }));
 
-  });
-
-  describe( 'store POST methods', function() {
-
     it('should add a new product', inject( function() {
       $httpBackend
       .expectPOST('/products', {
@@ -71,6 +67,24 @@ describe( 'store factory', function() {
       var products = store.addProduct({name: 'Product1'});
 
       $httpBackend.flush();
+    }));
+
+  });
+
+  describe( 'store category methods', function() {
+
+    it('should get all categories', inject( function() {
+      var mockData = [{title: 'Category1'}, {title: 'Category2'}];
+
+      $httpBackend
+      .whenGET('/categories')
+      .respond(mockData);
+
+      var categories = store.getCategories();
+
+      $httpBackend.flush();
+
+      expect(categories.length).toEqual(2);
     }));
 
   });

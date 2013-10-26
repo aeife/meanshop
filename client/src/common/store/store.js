@@ -4,7 +4,7 @@ angular.module( 'store', [
 ])
 
 
-.factory('store', function (Product) {
+.factory('store', function (Product, Category) {
   return {
     getProducts: function(){
       return Product.query();
@@ -20,6 +20,9 @@ angular.module( 'store', [
         name: productData.name
       });
       return product.$save();
+    },
+    getCategories: function(){
+      return Category.query();
     }
   };
 })
