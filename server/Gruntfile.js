@@ -48,6 +48,7 @@ module.exports = function(grunt) {
     jshint: {
       files: ['gruntFile.js', './src/**/*.js', 'lib/*.js', 'test/**/*.js'],
       options: {
+        ignores: ['./src/dbMock/*'],
         curly: true,
         eqeqeq: true,
         immed: true,
