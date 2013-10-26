@@ -21,3 +21,8 @@ app.configure('development', function(){
 server.listen(app.get('port'), function(){
   console.log('Express server listening on port2s ' + app.get('port'));
 });
+
+var routes = require('./routes.js');
+routes.addRoutes(app, {
+  products: require('./routes/products.js')
+});
