@@ -11,6 +11,6 @@ script:
   - grunt
 after_script:
   - cd ..
-  - server
+  - cd server
   - npm install
   - grunt
