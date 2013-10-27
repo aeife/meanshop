@@ -15,9 +15,9 @@ angular.module( 'meanShop.shop.shopCategory', [
   });
 })
 
-.controller('ShopCategoryCtrl', function ($scope, store) {
+.controller('ShopCategoryCtrl', function ($scope, store, $stateParams) {
   $scope.categories = store.getCategories();
-  $scope.products = store.getProducts();
+  $scope.products = store.getProductsByCategory($stateParams.category);
 })
 
 ;
