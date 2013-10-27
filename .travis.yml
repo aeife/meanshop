@@ -4,12 +4,13 @@ node_js:
 services: mongodb
 before_script:
   - npm install -g grunt-cli karma bower
-  - cd server
-  - npm install
-  - grunt
-  - cd ..
   - cd client
   - npm install
   - bower install
 script:
- - grunt
+  - grunt
+after script:
+  - cd ..
+  - server
+  - npm install
+  - grunt
