@@ -5,6 +5,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-jasmine-node');
+  grunt.loadNpmTasks('grunt-jasmine-node-coverage');
   grunt.loadNpmTasks('grunt-express-server');
 
   // Project configuration.
@@ -33,8 +34,13 @@ module.exports = function(grunt) {
       }
     },
     jasmine_node: {
+      coverage: {
+
+      },
+      src: './src',
+      specs: './test',
       specNameMatcher: "*.spec", // load only specs containing specNameMatcher
-      projectRoot: "./test/",
+      projectRoot: ".",
       requirejs: false,
       forceExit: false,
       jUnit: {
