@@ -9,7 +9,7 @@ before_script:
   - bower install
 script:
   - grunt
-after script:
+after_script:
   - cd ..
   - server
   - npm install
