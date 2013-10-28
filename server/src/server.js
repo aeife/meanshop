@@ -31,3 +31,5 @@ routes.addRoutes(app, {
   products: require('./routes/products.js'),
   categories: require('./routes/categories.js')
 });
+
+module.exports = server;

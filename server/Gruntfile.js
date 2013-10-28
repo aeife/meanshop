@@ -7,6 +7,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-jasmine-node');
   grunt.loadNpmTasks('grunt-jasmine-node-coverage');
   grunt.loadNpmTasks('grunt-express-server');
+  grunt.loadNpmTasks('grunt-shell-spawn');
 
   // Project configuration.
   grunt.initConfig({
@@ -84,13 +85,21 @@ module.exports = function(grunt) {
           script: path.resolve('./src/server.js')
         }
       }
+    },
+    shell: {
+      mongo: {
+        command: 'mongod',
+        options: {
+          async: true
+        }
+      }
     }
   });
 
   // Default task.
   grunt.registerTask('default', ['jshint', 'jasmine_node']);
 
-  grunt.registerTask('dev', ['jshint', 'jasmine_node', 'express:server', 'watch']);
+  grunt.registerTask('dev', ['shell:mongo', 'jshint', 'jasmine_node', 'express:server', 'watch']);
 
   grunt.registerTask('timestamp', function() {
     grunt.log.subhead(Date());
