@@ -4,8 +4,9 @@ angular.module( 'meanShop', [
   'meanShop.home',
   'meanShop.about',
   'meanShop.shop',
+  'meanShop.shop.cartWidget',
   'ui.router',
-  'store',
+  'store'
 ])
 
 .config( function myAppConfig ($stateProvider, $urlRouterProvider) {
@@ -47,6 +48,10 @@ angular.module( 'meanShop', [
       "main": {
         controller: 'ShopCtrl',
         templateUrl: 'shop/shop.tpl.html'
+      },
+      "sidebarTop": {
+        controller: 'CartWidgetCtrl',
+        templateUrl: 'shop/cartWidget/cartWidget.tpl.html'
       },
       "sidebar": {
         controller: 'CategoryChooserCtrl',
