@@ -5,11 +5,66 @@ angular.module( 'meanShop', [
   'meanShop.about',
   'meanShop.shop',
   'ui.router',
-  'store'
+  'store',
 ])
 
 .config( function myAppConfig ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/home');
+
+  $stateProvider
+  .state('sidebarView', {
+    abstract: true,
+    views: {
+      "main": {
+        templateUrl: 'layouts/sidebarView.tpl.html'
+      }
+    },
+    data:{pageTitle: 'Shop'}
+  })
+  .state( 'home', {
+    url: '/home',
+    views: {
+      "main": {
+        controller: 'HomeCtrl',
+        templateUrl: 'home/home.tpl.html'
+      }
+    },
+    data:{ pageTitle: 'Home' }
+  })
+  .state( 'about', {
+    url: '/about',
+    views: {
+      "main": {
+        controller: 'AboutCtrl',
+        templateUrl: 'about/about.tpl.html'
+      }
+    },
+    data:{ pageTitle: 'About' }
+  })
+  .state('sidebarView.shop', {
+    url: '/shop',
+    views: {
+      "main": {
+        controller: 'ShopCtrl',
+        templateUrl: 'shop/shop.tpl.html'
+      },
+      "sidebar": {
+        controller: 'CategoryChooserCtrl',
+        templateUrl: 'shop/categoryChooser/categoryChooser.tpl.html'
+      }
+    },
+    data:{pageTitle: 'Shop'}
+  })
+  .state('sidebarView.shop.category', {
+    url: '/:category',
+    views: {
+      "main": {
+        controller: 'ShopCategoryCtrl',
+        templateUrl: 'shop/shopCategory/shopCategory.tpl.html'
+      }
+    },
+    data:{pageTitle: 'Shop'}
+  });
 })
 
 .run( function run () {
