@@ -1,0 +1,8 @@
+<div class="sidebar col-sm-3">
+  <h2>Categories</h2>
+  <ul>
+    <li ng-repeat="category in categories">
+      <a href="#/shop/{{category._id | lowercase}}">{{category.title}}</a>
+    </li>
+  </ul>
+</div>
