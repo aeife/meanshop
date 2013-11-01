@@ -15,5 +15,14 @@ module.exports = {
         console.log(err);
       }
     });
+  },
+  get: function(req, res){
+    Product.findOne({_id: ObjectId.fromString(req.params.productId)}, function (err, product){
+      if (!err) {
+        res.send(product);
+      } else {
+        console.log(err);
+      }
+    });
   }
 };

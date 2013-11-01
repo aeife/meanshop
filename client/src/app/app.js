@@ -69,6 +69,16 @@ angular.module( 'meanShop', [
       }
     },
     data:{pageTitle: 'Shop'}
+  })
+  .state('sidebarView.shop.product', {
+    url: '/product/:product',
+    views: {
+      "main": {
+        controller: 'ShopProductCtrl',
+        templateUrl: 'shop/shopProduct/shopProduct.tpl.html'
+      }
+    },
+    data:{pageTitle: 'Shop'}
   });
 })
 
