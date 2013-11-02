@@ -1,10 +1,11 @@
 angular.module( 'store', [
   'product',
-  'category'
+  'category',
+  'cart'
 ])
 
 
-.factory('store', function (Product, Category) {
+.factory('store', function (Product, Category, cart) {
   return {
     getProducts: function(){
       return Product.query();
@@ -23,7 +24,8 @@ angular.module( 'store', [
     },
     getCategories: function(){
       return Category.query();
-    }
+    },
+    cart: cart
   };
 })
 

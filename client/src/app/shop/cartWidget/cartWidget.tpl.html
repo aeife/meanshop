@@ -1,7 +1,12 @@
 <div class="box">
   <h3 class="text-center">Your Cart</h3>
   <hr>
-  no products
+  <table class="col-xs-12">
+    <tr ng-repeat="item in cart.getItems()">
+      <td class="col-xs-9">{{item.product.title}}</td>
+      <td class="col-xs-3">{{item.quantity}}</td>
+    </tr>
+  </table>
   <hr>
   <div class="text-center">
     <button class="btn btn-primary">checkout</button>
