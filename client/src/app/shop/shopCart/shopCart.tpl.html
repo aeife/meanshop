@@ -1,18 +1,16 @@
 <h3 class="text-center">Your Cart</h3>
 <hr>
-<table class="col-xs-12 table table-striped">
+<table class="table table-striped table-vertical-center">
   <tr>
-    <th>Product</th>
-    <th>Quantity</th>
-    <th>Price</th>
-    <th></th>
+    <th class="col-xs-8">Product</th>
+    <th class="col-xs-2">Quantity</th>
+    <th class="col-xs-2">Price</th>
+    <th class="col-xs-1"></th>
   </tr>
   <tr ng-repeat="item in cart.getItems()">
-    <td class="col-xs-9">{{item.product.title}}</td>
-    <td class="col-xs-3">
-      {{item.quantity}}
-      <button class="btn btn-default btn-sm" ng-click="cart.addItem(item.product)"><i class="fa fa-plus"></i></button>
-      <button class="btn btn-default btn-sm" ng-click="cart.decreaseQuantity($index)"><i class="fa fa-minus"></i></button>
+    <td>{{item.product.title}}</td>
+    <td class="form">
+      <input class="form-control input-sm col-lg-5 col-sm-8" type="number" ng:model="item.quantity" ng:required>
     </td>
     <td>{{item.product.price * item.quantity | currency}}</td>
     <td>
