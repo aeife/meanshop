@@ -35,6 +35,11 @@ for (var i = 0; i < productCount; i++){
     title: Faker.Lorem.words(1)[0],
     description: Faker.Lorem.sentences(3),
     category: categories[Math.floor(Math.random() * (categories.length-1))],
-    created: new Date()
+    created: new Date(),
+    price: randomPrice()
   });
+}
+
+function randomPrice(){
+  return parseFloat((Math.random()*100).toFixed(2));
 }
