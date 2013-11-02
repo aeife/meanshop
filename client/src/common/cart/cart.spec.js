@@ -73,19 +73,19 @@ describe( 'cart factory', function() {
 
   });
 
-  describe('lower quantity', function() {
+  describe('decrease quantity', function() {
 
-    it('should lower quantity', inject( function() {
+    it('should decrease quantity', inject( function() {
       cart.addItem({title: 'Product1'});
       cart.addItem({title: 'Product1'});
-      cart.lowerQuantity(0);
+      cart.decreaseQuantity(0);
 
       expect(cart.getItems()[0].quantity).toEqual(1);
     }));
 
-    it('should remove item when lowering quantity to zero', inject( function() {
+    it('should remove item when decreasing quantity to zero', inject( function() {
       cart.addItem({title: 'Product1'});
-      cart.lowerQuantity(0);
+      cart.decreaseQuantity(0);
 
       expect(cart.getItems().length).toEqual(0);
     }));
@@ -101,5 +101,21 @@ describe( 'cart factory', function() {
 
     expect(cart.getItems().length).toEqual(0);
   }));
+
+
+  describe('get total price', function() {
+
+    it('should get zero if no items', inject( function() {
+      expect(cart.getTotalPrice()).toEqual(0);
+    }));
+
+    it('should get total price', inject( function() {
+      cart.addItem({title: 'Product1', price: 11.20, quantity: 1});
+      cart.addItem({title: 'Product1', price: 7.22, quantity: 1});
+      cart.addItem({title: 'Product2', price: 49.12, quantity: 1});
+
+      expect(cart.getTotalPrice()).toEqual(67.54);
+    }));
+  });
 
 });

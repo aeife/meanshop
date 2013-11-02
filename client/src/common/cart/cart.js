@@ -10,7 +10,7 @@ angular.module( 'cart', [
   var checkIfProductExists = function(product){
     for (var i = 0, len = items.length; i < len; i++){
       if (angular.equals(items[i].product, product)){
-        return items[i];
+        return i;
       }
     }
     return false;
@@ -21,9 +21,9 @@ angular.module( 'cart', [
       return items;
     },
     addItem: function(product){
-      var existingProduct = checkIfProductExists(product);
-      if (checkIfProductExists(product)){
-        existingProduct.quantity++;
+      var existingProductIndex = checkIfProductExists(product);
+      if (existingProductIndex !== false){
+        this.increaseQuantity(existingProductIndex);
       } else {
         items.push({product: product, quantity: 1});
       }
@@ -31,7 +31,10 @@ angular.module( 'cart', [
     removeItem: function(index){
       items.splice(index, 1);
     },
-    lowerQuantity: function(index){
+    increaseQuantity: function(index){
+      items[index].quantity++;
+    },
+    decreaseQuantity: function(index){
       items[index].quantity--;
       if (items[index].quantity === 0){
         this.removeItem(index);
@@ -39,6 +42,13 @@ angular.module( 'cart', [
     },
     clear: function(){
       items = [];
+    },
+    getTotalPrice: function(){
+      var totalPrice = 0;
+      for (var i = 0, len = items.length; i < len; i++){
+        totalPrice = parseFloat((totalPrice + (items[i].product.price * items[i].quantity)).toFixed(10));
+      }
+      return totalPrice;
     }
   };
 })

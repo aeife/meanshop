@@ -4,6 +4,7 @@
   <tr>
     <th>Product</th>
     <th>Quantity</th>
+    <th>Price</th>
     <th></th>
   </tr>
   <tr ng-repeat="item in cart.getItems()">
@@ -11,14 +12,16 @@
     <td class="col-xs-3">
       {{item.quantity}}
       <button class="btn btn-default btn-sm" ng-click="cart.addItem(item.product)"><i class="fa fa-plus"></i></button>
-      <button class="btn btn-default btn-sm" ng-click="cart.lowerQuantity($index)"><i class="fa fa-minus"></i></button>
+      <button class="btn btn-default btn-sm" ng-click="cart.decreaseQuantity($index)"><i class="fa fa-minus"></i></button>
     </td>
+    <td>{{item.product.price * item.quantity | currency}}</td>
     <td>
-      <button class="btn btn-default btn-sm btn-danger" ng-click="cart.removeItem(item.product)"><i class="fa fa-times"></i></button>
+      <button class="btn btn-default btn-sm btn-danger" ng-click="cart.removeItem($index)"><i class="fa fa-times"></i></button>
     </td>
   </tr>
 </table>
 <hr>
+<h2 class="text-right">{{cart.getTotalPrice() | currency}}</h2>
 <div class="text-center">
-  <button class="btn btn-primary">checkout</button>
+  <button class="btn btn-success">checkout</button>
 </div>
