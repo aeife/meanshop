@@ -60,8 +60,8 @@ angular.module( 'meanShop', [
     },
     data:{pageTitle: 'Shop'}
   })
-  .state('sidebarView.shop.cart', {
-    url: '/cart',
+  .state('cart', {
+    url: '/shop/cart',
     views: {
       "main": {
         controller: 'ShopCartCtrl',
