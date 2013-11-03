@@ -3,6 +3,8 @@ angular.module( 'meanShop', [
   'templates-common',
   'meanShop.home',
   'meanShop.about',
+  'meanShop.login',
+  'meanShop.loginWidget',
   'meanShop.shop',
   'meanShop.shop.cartWidget',
   'ui.router',
@@ -41,6 +43,16 @@ angular.module( 'meanShop', [
       }
     },
     data:{ pageTitle: 'About' }
+  })
+  .state('login', {
+    url: '/login',
+    views: {
+      "main": {
+        controller: 'LoginCtrl',
+        templateUrl: 'login/login.tpl.html'
+      }
+    },
+    data:{ pageTitle: 'Home' }
   })
   .state('sidebarView.shop', {
     url: '/shop',
