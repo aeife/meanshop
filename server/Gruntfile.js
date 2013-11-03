@@ -99,7 +99,7 @@ module.exports = function(grunt) {
   // Default task.
   grunt.registerTask('default', ['jshint', 'jasmine_node']);
 
-  grunt.registerTask('dev', ['shell:mongo', 'jshint', 'jasmine_node', 'express:server', 'watch']);
+  grunt.registerTask('dev', ['jshint', 'jasmine_node', 'express:server', 'watch']);
 
   grunt.registerTask('timestamp', function() {
     grunt.log.subhead(Date());
