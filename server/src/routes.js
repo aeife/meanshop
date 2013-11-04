@@ -11,6 +11,7 @@ module.exports = {
     app.get('/products/:productId', handlers.products.get);
     app.get('/categories', handlers.categories.getAll);
     app.post('/login', handlers.auth.login);
+    app.get('/logout', handlers.auth.logout);
     app.post('/products', ensureAuthenticated, handlers.products.new);
   }
 };

@@ -16,5 +16,9 @@ module.exports = {
         return res.send(200, {username: user.username});
       });
     })(req, res, next);
+  },
+  logout: function(req, res, next){
+    req.logout();
+    res.send(200);
   }
 };
