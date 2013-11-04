@@ -21,11 +21,11 @@ describe( 'auth factory', function() {
     var promise = auth.signIn({username: 'testuser', password: 'testpass', password2: 'testpass'});
     promise.success(function (data, status, header){
       expect(status).toEqual(200);
-      expect(auth.status()).toEqual(true);
     });
 
     expect(auth.status()).toEqual(false);
     $httpBackend.flush();
+    expect(auth.status()).toEqual(true);
   }));
 
   it('should handle login error', inject( function() {
@@ -37,11 +37,11 @@ describe( 'auth factory', function() {
     promise.error(function (data, status, header){
       expect(data).toEqual('login error');
       expect(status).toEqual(401);
-      expect(auth.status()).toEqual(false);
     });
 
     expect(auth.status()).toEqual(false);
     $httpBackend.flush();
+    expect(auth.status()).toEqual(false);
   }));
 
   it('should change status on logout', inject( function() {
@@ -51,11 +51,9 @@ describe( 'auth factory', function() {
     .respond(200, '');
 
     var promise = auth.signIn({username: 'testuser', password: 'testpass', password2: 'testpass'});
-    promise.success(function (data, status, header){
-      expect(auth.status()).toEqual(true);
-    });
 
     $httpBackend.flush();
+    expect(auth.status()).toEqual(true);
 
     // now log out
     $httpBackend
@@ -65,11 +63,11 @@ describe( 'auth factory', function() {
     promise = auth.signOut();
     promise.error(function (data, status, header){
       expect(status).toEqual(200);
-      expect(auth.status()).toEqual(false);
     });
 
     expect(auth.status()).toEqual(true);
     $httpBackend.flush();
+    expect(auth.status()).toEqual(false);
   }));
 
 });
