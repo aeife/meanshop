@@ -3,6 +3,6 @@ module.exports = {
     app.get('/products', handlers.products.getAll);
     app.get('/products/:productId', handlers.products.get);
     app.get('/categories', handlers.categories.getAll);
-    app.get('/login', handlers.auth.login);
+    app.post('/login', handlers.auth.login);
   }
 };
