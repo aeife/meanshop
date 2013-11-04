@@ -66,7 +66,6 @@ server.listen(app.get('port'), function(){
 // database
 var mongoose = require('mongoose');
 mongoose.connect(config.mongoDB.url);
-mongoose.set('debug', true);
 
 var routes = require('./routes.js');
 routes.addRoutes(app, {
@@ -76,6 +75,3 @@ routes.addRoutes(app, {
 });
 
 module.exports = server;
-
-
-
