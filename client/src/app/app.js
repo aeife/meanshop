@@ -8,7 +8,8 @@ angular.module( 'meanShop', [
   'meanShop.shop',
   'meanShop.shop.cartWidget',
   'ui.router',
-  'store'
+  'store',
+  'auth'
 ])
 
 .config( function myAppConfig ($stateProvider, $urlRouterProvider) {
