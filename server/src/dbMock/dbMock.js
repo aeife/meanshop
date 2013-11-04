@@ -4,6 +4,7 @@ db = conn.getDB("meanshop");
 // remove old db entries
 db.products.remove();
 db.categories.remove();
+db.users.remove();
 
 load('Faker.js');
 
@@ -43,3 +44,12 @@ for (var i = 0; i < productCount; i++){
 function randomPrice(){
   return parseFloat((Math.random()*100).toFixed(2));
 }
+
+
+// create user
+db.users.insert({
+  username: 'tester',
+  created: new Date(),
+  salt: '$2a$06$8VPuEIofMXma3OzlCbFzye',
+  hash: '$2a$06$8VPuEIofMXma3OzlCbFzyeTDOYhKRtJYwrobl/lFiBDFqFmVkhDRS'
+});
