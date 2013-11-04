@@ -2,4 +2,5 @@
 <a ng-show="!loginStatus()" href="#/login" class="btn btn-primary btn-xs">Login</a>
 <div ng-show="loginStatus()">
   Logged in as {{user().username}}
+  <button ng-click="logout()" class="btn btn-primary btn-xs">Logout</button>
 </div>

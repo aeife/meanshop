@@ -9,6 +9,10 @@ angular.module('meanShop.loginWidget', [
     controller: function($scope, auth){
       $scope.loginStatus = auth.status;
       $scope.user = auth.currentUser;
+
+      $scope.logout = function(){
+        auth.signOut();
+      };
     }
   };
 })

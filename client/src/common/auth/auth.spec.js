@@ -2,6 +2,7 @@ describe( 'auth factory', function() {
   var Product, $httpBackend;
 
   beforeEach(module('auth'));
+  beforeEach(module('ngCookies'));
 
   beforeEach(inject(function (_auth_, _$httpBackend_){
     auth = _auth_;

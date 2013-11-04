@@ -3,10 +3,10 @@ angular.module( 'auth', [
 ])
 
 
-.factory('auth', function ($http) {
+.factory('auth', function ($http, $cookieStore) {
 
-  var _authStatus = false;
-  var _user = {};
+  var _authStatus = $cookieStore.get('user') ? true : false;
+  var _user = $cookieStore.get('user') ? $cookieStore.get('user') : {};
 
   return {
     signIn: function(userData){
@@ -14,6 +14,7 @@ angular.module( 'auth', [
       promise.success(function(data){
         _authStatus = true;
         _user = data;
+        $cookieStore.put('user', _user);
       });
       return promise;
     },
@@ -22,6 +23,7 @@ angular.module( 'auth', [
       promise.success(function(){
         _authStatus = false;
         _user = {};
+        $cookieStore.remove('user');
       });
       return promise;
     },
