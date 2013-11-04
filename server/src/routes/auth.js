@@ -13,7 +13,7 @@ module.exports = {
         if (err) {
           return next(err);
         }
-        return res.send(200);
+        return res.send(200, {username: user.username});
       });
     })(req, res, next);
   }

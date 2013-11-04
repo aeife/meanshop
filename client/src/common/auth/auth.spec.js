@@ -70,4 +70,44 @@ describe( 'auth factory', function() {
     expect(auth.status()).toEqual(false);
   }));
 
+  it('should save user on login', inject( function() {
+    $httpBackend
+    .expectPOST('/login', {username: 'testuser', password: 'testpass', password2: 'testpass'})
+    .respond(200, {username: 'testuser'});
+
+    var promise = auth.signIn({username: 'testuser', password: 'testpass', password2: 'testpass'});
+    promise.success(function (data, status, header){
+      expect(status).toEqual(200);
+      expect(data).toEqual({username: 'testuser'});
+    });
+
+    $httpBackend.flush();
+    expect(auth.currentUser()).toEqual({username: 'testuser'});
+  }));
+
+  it('should delete user on logout', inject( function() {
+    // login first
+    $httpBackend
+    .expectPOST('/login', {username: 'testuser', password: 'testpass', password2: 'testpass'})
+    .respond(200, {username: 'testuser'});
+
+    var promise = auth.signIn({username: 'testuser', password: 'testpass', password2: 'testpass'});
+
+    $httpBackend.flush();
+    expect(auth.currentUser()).toEqual({username: 'testuser'});
+
+    $httpBackend
+    .whenGET('/logout')
+    .respond(200);
+
+    promise = auth.signOut();
+    promise.error(function (data, status, header){
+      expect(status).toEqual(200);
+    });
+
+
+    $httpBackend.flush();
+    expect(auth.currentUser()).toEqual({});
+  }));
+
 });
