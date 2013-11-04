@@ -24,5 +24,15 @@ module.exports = {
         console.log(err);
       }
     });
+  },
+  new: function(req, res){
+    var product = new Product({title: req.title, description: req.description, category: req.category});
+    product.save(function(err){
+      if (err) {
+        res.send(500);
+      } else {
+        res.send(200);
+      }
+    });
   }
 };
