@@ -50,6 +50,5 @@ function randomPrice(){
 db.users.insert({
   username: 'tester',
   created: new Date(),
-  salt: '$2a$06$8VPuEIofMXma3OzlCbFzye',
   hash: '$2a$06$8VPuEIofMXma3OzlCbFzyeTDOYhKRtJYwrobl/lFiBDFqFmVkhDRS'
 });
