@@ -6,8 +6,9 @@ angular.module('meanShop.loginWidget', [
   return {
     restrict: 'E',
     templateUrl: 'loginWidget/loginWidget.tpl.html',
-    controller: function($scope){
-
+    controller: function($scope, auth){
+      $scope.loginStatus = auth.status;
+      $scope.user = auth.currentUser;
     }
   };
 })
