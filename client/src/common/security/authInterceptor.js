@@ -1,27 +1,16 @@
 angular.module('security.authInterceptor', [])
 
 // This http interceptor listens for authentication failures
-.factory('authInterceptor', function($injector, $q) {
+.factory('authInterceptor', function($injector, $q, $rootScope) {
   return function(promise) {
     // Intercept failed requests
     return promise.then(null, function(response) {
       if(response.status === 401) {
         var deferred = $q.defer();
 
-        var $modal = $injector.get('$modal');
+        var auth = $injector.get('auth');
 
-        var model = $modal.open({
-          backdrop: true,
-          keyboard: true,
-          backdropClick: true,
-          templateUrl: 'loginDialog/loginDialog.tpl.html',
-          controller: 'LoginDialogCtrl'
-        });
-        model.result.then(function(result){
-          if(result){
-            alert('model closed with result: ' + result);
-          }
-        });
+        $rootScope.$broadcast('event:authRequired');
 
         return deferred.promise;
       }
