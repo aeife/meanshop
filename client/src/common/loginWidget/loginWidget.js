@@ -12,16 +12,15 @@ angular.module('loginWidget', [
       $scope.user = auth.currentUser;
 
       $scope.login = function(){
-        var model = $modal.open({
+        var modal = $modal.open({
           backdrop: true,
           keyboard: true,
           backdropClick: true,
           templateUrl: 'loginDialog/loginDialog.tpl.html',
           controller: 'LoginDialogCtrl'
         });
-        model.result.then(function(result){
-          if(result)
-          {
+        modal.result.then(function(result){
+          if(result){
             alert('model closed with result: ' + result);
           }
         });
