@@ -11,7 +11,8 @@ angular.module( 'meanShop', [
   'ui.bootstrap',
   'store',
   'auth',
-  'ngCookies'
+  'ngCookies',
+  'meanShop.loginDialog'
 ])
 
 .config( function myAppConfig ($stateProvider, $urlRouterProvider) {
