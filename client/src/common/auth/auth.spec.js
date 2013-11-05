@@ -111,4 +111,19 @@ describe( 'auth factory', function() {
     expect(auth.currentUser()).toEqual({});
   }));
 
+  it('should check current auth status on server', inject( function() {
+    $httpBackend
+    .whenGET('/auth')
+    .respond(200);
+
+    var result = null;
+    var promise = auth.isLoggedIn();
+    promise.success(function(){
+      result = true;
+    });
+
+    $httpBackend.flush();
+    expect(result).toEqual(true);
+  }));
+
 });
