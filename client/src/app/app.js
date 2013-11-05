@@ -8,6 +8,7 @@ angular.module( 'meanShop', [
   'meanShop.shop',
   'meanShop.shop.cartWidget',
   'ui.router',
+  'ui.bootstrap',
   'store',
   'auth',
   'ngCookies'

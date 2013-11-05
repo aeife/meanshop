@@ -63,7 +63,7 @@ module.exports = {
   vendor_files: {
     js: [
       'vendor/angular/angular.js',
-      // 'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
+      'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
       'vendor/jquery/jquery.js',
       'vendor/bootstrap/dist/js/bootstrap.js',
       'vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js',
