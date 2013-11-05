@@ -13,7 +13,8 @@ angular.module( 'meanShop', [
   'auth',
   'ngCookies',
   'meanShop.loginDialog',
-  'security.authInterceptor'
+  'security.authInterceptor',
+  'security.authModal'
 ])
 
 .config( function myAppConfig ($stateProvider, $urlRouterProvider) {
@@ -109,7 +110,7 @@ angular.module( 'meanShop', [
   });
 })
 
-.run( function run () {
+.run( function run (authModal) {
 })
 
 .controller( 'AppCtrl', function AppCtrl ($scope, $location, $state) {
