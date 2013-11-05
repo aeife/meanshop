@@ -18,6 +18,12 @@ angular.module( 'meanShop', [
 ])
 
 .config( function myAppConfig ($stateProvider, $urlRouterProvider) {
+  var authResolver = {
+    'auth' : function(auth) {
+      return auth.isLoggedIn();
+    }
+  };
+
   $urlRouterProvider.otherwise('/home');
 
   $stateProvider

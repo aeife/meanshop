@@ -20,5 +20,12 @@ module.exports = {
   logout: function(req, res, next){
     req.logout();
     res.send(200);
+  },
+  status: function(req, res, next){
+    if (req.user) {
+      res.send(200);
+    } else {
+      res.send(401);
+    }
   }
 };

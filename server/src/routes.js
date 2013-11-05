@@ -12,6 +12,7 @@ module.exports = {
     app.get('/categories', handlers.categories.getAll);
     app.post('/login', handlers.auth.login);
     app.get('/logout', handlers.auth.logout);
+    app.get('/auth', handlers.auth.status);
     app.post('/products', ensureAuthenticated, handlers.products.new);
   }
 };

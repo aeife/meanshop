@@ -33,6 +33,9 @@ angular.module( 'auth', [
     status: function(){
       return _authStatus;
     },
+    isLoggedIn: function(){
+      return $http.get('/auth');
+    },
     currentUser: function(){
       return _user;
     }
