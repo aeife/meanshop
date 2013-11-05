@@ -7,17 +7,41 @@
       <div class="col-sm-6">
         <h4>Sign In</h4>
         <hr>
-        <p>Sign Up Data..</p>
+        <form role="form" name="loginForm">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Username" ng-model="signInData.username">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password" ng-model="signInData.password">
+          </div>
+          <button type="submit" ng-click="login()" class="btn btn-primary">Login</button>
+        </form>
       </div>
       <div class="col-sm-6">
         <h4>Create Account</h4>
         <hr>
-        <p>create account Data..</p>
+        <form role="form" name="registerForm">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Username" ng-model="registerData.username">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password" ng-model="registerData.password">
+          </div>
+          <div class="form-group">
+            <label for="passwordConfirm">Confirm Password</label>
+            <input type="password" class="form-control" id="passwordConfirm" placeholder="Confirm Password" ng-model="registerData.passwordConfirm">
+          </div>
+          <button type="submit" ng-click="register()" class="btn btn-primary">Register</button>
+        </form>
       </div>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-default" ng-click="close()">Close</button>
-      <button type="button" class="btn btn-primary" ng-click="close()">Save changes</button>
+     <!--  <button type="button" class="btn btn-default" ng-click="close()">Close</button>
+      <button type="button" class="btn btn-primary" ng-click="close()">Save changes</button> -->
     </div>
   </div><!-- /.modal-content -->
 </div><!-- /.modal-dialog -->
