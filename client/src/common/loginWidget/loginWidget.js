@@ -5,6 +5,7 @@ angular.module('meanShop.loginWidget', [
 .directive('loginWidget', function() {
   return {
     restrict: 'E',
+    replace: true,
     templateUrl: 'loginWidget/loginWidget.tpl.html',
     controller: function($scope, auth, $modal){
       $scope.loginStatus = auth.status;
