@@ -1,4 +1,4 @@
-angular.module('meanShop.loginWidget', [
+angular.module('loginWidget', [
   'ui.bootstrap'
 ])
 

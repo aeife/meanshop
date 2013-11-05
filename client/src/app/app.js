@@ -4,7 +4,7 @@ angular.module( 'meanShop', [
   'meanShop.home',
   'meanShop.about',
   'meanShop.login',
-  'meanShop.loginWidget',
+  'loginWidget',
   'meanShop.shop',
   'meanShop.shop.cartWidget',
   'ui.router',
