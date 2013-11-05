@@ -14,7 +14,12 @@ angular.module('meanShop.loginDialog', [
   };
 
   $scope.login = function(){
-    console.log($scope.signInData);
+    auth.signIn($scope.signInData).then(function(){
+      console.log("success");
+      $scope.close();
+    }, function(){
+      console.log("error");
+    });
   };
 
   $scope.register = function(){
