@@ -98,8 +98,8 @@ angular.module( 'meanShop', [
     url: '/:category',
     views: {
       "main": {
-        controller: 'ShopCategoryCtrl',
-        templateUrl: 'shop/shopCategory/shopCategory.tpl.html'
+        controller: 'ProductListCtrl',
+        templateUrl: 'shop/product/list/productList.tpl.html'
       }
     },
     data:{pageTitle: 'Shop'}
@@ -108,8 +108,8 @@ angular.module( 'meanShop', [
     url: '/product/:product',
     views: {
       "main": {
-        controller: 'ShopProductCtrl',
-        templateUrl: 'shop/shopProduct/shopProduct.tpl.html'
+        controller: 'ProductDetailCtrl',
+        templateUrl: 'shop/product/detail/productDetail.tpl.html'
       }
     },
     data:{pageTitle: 'Shop'}

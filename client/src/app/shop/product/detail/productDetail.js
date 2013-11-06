@@ -1,8 +1,8 @@
-angular.module( 'meanShop.shop.shopProduct', [
-  'ui.router'
+angular.module( 'meanShop.shop.productDetail', [
+
 ])
 
-.controller('ShopProductCtrl', function ($scope, store, $stateParams) {
+.controller('ProductDetailCtrl', function ($scope, store, $stateParams) {
   $scope.product = store.getProduct($stateParams.product);
 
   $scope.addToCart = function(){
