@@ -101,14 +101,19 @@ angular.module( 'meanShop', [
     data:{pageTitle: 'Shop'}
   })
   .state('sidebarView.shop.product', {
-    url: '/product/:product',
+    abstract: true,
+    url: '/product',
     views: {
       "main": {
-        controller: 'ProductDetailCtrl',
-        templateUrl: 'shop/product/detail/productDetail.tpl.html'
+        template: '<ui-view/>'
       }
     },
-    data:{pageTitle: 'Shop'}
+  })
+  .state('sidebarView.shop.product.detail', {
+    url: '/:product',
+    controller: 'ProductDetailCtrl',
+    templateUrl: 'shop/product/detail/productDetail.tpl.html',
+    data:{pageTitle: 'Product'}
   });
 })
 
