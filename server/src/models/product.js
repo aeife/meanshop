@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var productSchema = mongoose.Schema({
   title: String,
   description: String,
-  category: mongoose.Schema.ObjectId,
+  category: { type: String, index: { unique: true }},
   created: { type: Date, default: Date.now }
 });
 

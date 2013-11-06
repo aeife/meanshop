@@ -35,7 +35,7 @@ for (var i = 0; i < productCount; i++){
   db.products.insert({
     title: Faker.Lorem.words(1)[0],
     description: Faker.Lorem.sentences(3),
-    category: categories[Math.floor(Math.random() * (categories.length-1))],
+    category: categoryTitles[Math.floor(Math.random() * (categoryTitles.length-1))],
     created: new Date(),
     price: randomPrice()
   });
