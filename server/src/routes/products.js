@@ -5,7 +5,7 @@ module.exports = {
   getAll: function(req, res){
     var query = {};
     if (req.query.category) {
-      query = {category: ObjectId.fromString(req.query.category)};
+      query = {categoryId: ObjectId.fromString(req.query.category)};
     }
 
     Product.find(query, function (err, products){

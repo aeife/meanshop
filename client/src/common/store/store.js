@@ -11,7 +11,7 @@ angular.module( 'store', [
       return Product.query();
     },
     getProductsByCategory: function(cat){
-      return Product.query({category: cat});
+      return Product.query({categoryId: cat});
     },
     getProduct: function(productId){
       return Product.get({productId: productId});
