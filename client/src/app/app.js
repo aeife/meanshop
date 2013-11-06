@@ -5,8 +5,8 @@ angular.module( 'meanShop', [
   'meanShop.about',
   'meanShop.login',
   'loginWidget',
+  'cartWidget',
   'meanShop.shop',
-  'meanShop.shop.cartWidget',
   'ui.router',
   'ui.bootstrap',
   'store',
@@ -73,13 +73,9 @@ angular.module( 'meanShop', [
         controller: 'ShopCtrl',
         templateUrl: 'shop/shop.tpl.html'
       },
-      "sidebarTop": {
-        controller: 'CartWidgetCtrl',
-        templateUrl: 'shop/cartWidget/cartWidget.tpl.html'
-      },
       "sidebar": {
-        controller: 'CategoryChooserCtrl',
-        templateUrl: 'shop/categoryChooser/categoryChooser.tpl.html'
+        controller: 'ShopSidebarCtrl',
+        templateUrl: 'shop/sidebar/shopSidebar.tpl.html'
       }
     },
     data:{pageTitle: 'Shop'}

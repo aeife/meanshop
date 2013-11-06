@@ -1,7 +1,7 @@
 angular.module( 'meanShop.shop', [
   'ui.router',
   'meanShop.shop.product',
-  'meanShop.shop.categoryChooser',
+  'meanShop.shop.shopSidebar',
   'meanShop.shop.shopCart'
 ])
 
