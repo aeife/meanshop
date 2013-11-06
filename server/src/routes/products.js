@@ -5,7 +5,7 @@ module.exports = {
   getAll: function(req, res){
     var query = {};
     if (req.query.category) {
-      query = {category: req.query.category};
+      query = {category: ObjectId.fromString(req.query.category)};
     }
 
     Product.find(query, function (err, products){
@@ -17,8 +17,9 @@ module.exports = {
     });
   },
   get: function(req, res){
-    Product.findOne({_id: ObjectId.fromString(req.params.productId)}, function (err, product){
+    Product.findOne({_id: ObjectId.fromString(req.params.productId)}).populate('category').exec(function (err, product){
       if (!err) {
+        console.log(product.category);
         res.send(product);
       } else {
         console.log(err);

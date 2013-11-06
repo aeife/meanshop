@@ -2,7 +2,7 @@
 <h2>Categories</h2>
 <ul class="nav nav-pills nav-stacked">
   <li ng-repeat="category in categories" ng-class="{active:state.params.category==category._id}">
-    <a href="#/shop/{{category.title}}">{{category.title}}</a>
+    <a href="#/shop/{{category._id}}">{{category.title}}</a>
   </li>
 </ul>
 
