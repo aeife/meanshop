@@ -4,8 +4,8 @@ var ObjectId = require('mongoose').Types.ObjectId;
 module.exports = {
   getAll: function(req, res){
     var query = {};
-    if (req.query.category) {
-      query = {categoryId: ObjectId.fromString(req.query.category)};
+    if (req.query.categoryId) {
+      query = {category: ObjectId.fromString(req.query.categoryId)};
     }
 
     Product.find(query, function (err, products){
