@@ -85,7 +85,7 @@ angular.module( 'meanShop', [
     views: {
       "main": {
         controller: 'ShopCartCtrl',
-        templateUrl: 'shop/shopCart/shopCart.tpl.html'
+        templateUrl: 'shop/cart/shopCart.tpl.html'
       }
     },
     data:{pageTitle: 'Shop'}

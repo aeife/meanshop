@@ -1,4 +1,4 @@
-angular.module( 'meanShop.shop.shopSidebar', [
+angular.module( 'meanShop.shop.sidebar', [
   'ui.router'
 ])
 

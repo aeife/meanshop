@@ -1,5 +1,4 @@
-angular.module( 'meanShop.shop.shopCart', [
-
+angular.module( 'meanShop.shop.cart', [
 ])
 
 .controller('ShopCartCtrl', function ($scope, store) {

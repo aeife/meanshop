@@ -1,8 +1,8 @@
 angular.module( 'meanShop.shop', [
   'ui.router',
   'meanShop.shop.product',
-  'meanShop.shop.shopSidebar',
-  'meanShop.shop.shopCart'
+  'meanShop.shop.sidebar',
+  'meanShop.shop.cart'
 ])
 
 .controller('ShopCtrl', function ($scope, store) {
