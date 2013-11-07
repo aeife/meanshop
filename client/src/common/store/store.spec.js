@@ -27,6 +27,7 @@ describe( 'store factory', function() {
       $httpBackend.flush();
 
       expect(products.length).toEqual(2);
+      expect(products[0].name).toEqual('Product1');
     }));
 
     it('should get specific products', inject( function() {

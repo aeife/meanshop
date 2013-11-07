@@ -6,7 +6,7 @@ angular.module( 'meanShop.shop', [
 ])
 
 .controller('ShopCtrl', function ($scope, store) {
-  $scope.categories = store.getCategories();
+  // $scope.categories = store.getCategories();
 })
 
 ;
