@@ -109,6 +109,12 @@ angular.module( 'meanShop', [
       }
     },
   })
+  .state('sidebarView.shop.product.new', {
+    url: '/new',
+    controller: 'ProductNewCtrl',
+    templateUrl: 'shop/product/new/productNew.tpl.html',
+    data:{pageTitle: 'Product'}
+  })
   .state('sidebarView.shop.product.detail', {
     url: '/:product',
     controller: 'ProductDetailCtrl',
