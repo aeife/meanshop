@@ -11,5 +11,8 @@
     "angular-cookies": "~1.0.8",
     "angular-bootstrap": "~0.6.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "resolutions": {
+    "angular": "1.2.0-rc.3"
+  }
 }
