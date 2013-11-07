@@ -22,6 +22,9 @@ angular.module( 'store', [
       });
       return product.$save();
     },
+    updateProduct: function(productData){
+      productData.$save();
+    },
     getCategories: function(){
       return Category.query();
     },

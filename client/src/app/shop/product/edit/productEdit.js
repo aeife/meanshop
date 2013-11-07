@@ -34,7 +34,7 @@ angular.module( 'meanShop.shop.productEdit', [
   };
 
   $scope.update = function(){
-    console.log($scope.product);
+    store.updateProduct($scope.product);
   };
 })
 

@@ -26,13 +26,12 @@ module.exports = {
       }
     });
   },
-  new: function(req, res){
-    var product = new Product({title: req.title, description: req.description, category: req.category});
-    product.save(function(err){
+  update: function(req, res){
+    Product.update({_id: ObjectId.fromString(req.body._id)}, {title: req.body.title, description: req.body.description}, {upsert: true}, function(err){
       if (err) {
         res.send(500);
       } else {
-        res.send(200);
+        res.send(204);
       }
     });
   }
