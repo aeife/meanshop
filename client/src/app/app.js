@@ -6,6 +6,7 @@ angular.module( 'meanShop', [
   'meanShop.login',
   'loginWidget',
   'cartWidget',
+  'adminWidget',
   'meanShop.shop',
   'ui.router',
   'ui.bootstrap',
