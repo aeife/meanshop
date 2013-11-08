@@ -6,7 +6,7 @@ angular.module( 'meanShop.shop.productNew', [
   $scope.categories = store.getCategories();
 
   $scope.add = function(){
-    console.log($scope.product);
+    store.addProduct($scope.product);
   };
 })
 

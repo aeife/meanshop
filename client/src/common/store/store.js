@@ -17,9 +17,7 @@ angular.module( 'store', [
       return Product.get({productId: productId});
     },
     addProduct: function(productData){
-      var product = new Product({
-        name: productData.name
-      });
+      var product = new Product(productData);
       return product.$save();
     },
     updateProduct: function(productData){

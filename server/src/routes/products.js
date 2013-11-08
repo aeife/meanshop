@@ -31,7 +31,16 @@ module.exports = {
     if (req.body.category instanceof Object){
       req.body.category = req.body.category._id;
     }
-    Product.update({_id: ObjectId.fromString(req.body._id)}, {title: req.body.title, description: req.body.description, category: req.body.category}, {upsert: true}, function(err){
+
+    // check if _id is given for query
+    var query;
+    if (req.body._id){
+      query = {_id: ObjectId.fromString(req.body._id)};
+    } else {
+      query = {};
+    }
+
+    Product.update(query, {title: req.body.title, description: req.body.description, category: req.body.category}, {upsert: true}, function(err){
       if (err) {
         console.log(err);
         res.send(500);
