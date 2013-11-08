@@ -102,7 +102,7 @@ angular.module( 'meanShop', [
   })
   .state('sidebarView.shop.product', {
     abstract: true,
-    url: '/:category/product',
+    url: '/product',
     views: {
       "main": {
         template: '<ui-view/>'
