@@ -6,8 +6,23 @@ angular.module('adminWidget', [
     restrict: 'E',
     replace: true,
     templateUrl: 'adminWidget/adminWidget.tpl.html',
-    controller: function($scope, auth){
+    controller: function($scope, auth, $state){
       $scope.loginStatus = auth.status;
+
+      // define posible state transitions for edits
+      var _transitionsEdit = {
+        'sidebarView.shop.product.detail': 'sidebarView.shop.product.edit'
+      };
+
+      $scope.editCurrent = function(){
+        if (_transitionsEdit[$state.current.name]){
+           $state.transitionTo(_transitionsEdit[$state.current.name], $state.params);
+        }
+      };
+
+      $scope.isEditable = function(){
+        return !!_transitionsEdit[$state.current.name];
+      };
     }
   };
 })
