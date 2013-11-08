@@ -27,8 +27,13 @@ module.exports = {
     });
   },
   update: function(req, res){
-    Product.update({_id: ObjectId.fromString(req.body._id)}, {title: req.body.title, description: req.body.description}, {upsert: true}, function(err){
+    // check if category is whole object and replace it with id
+    if (req.body.category instanceof Object){
+      req.body.category = req.body.category._id;
+    }
+    Product.update({_id: ObjectId.fromString(req.body._id)}, {title: req.body.title, description: req.body.description, category: req.body.category}, {upsert: true}, function(err){
       if (err) {
+        console.log(err);
         res.send(500);
       } else {
         res.send(204);
