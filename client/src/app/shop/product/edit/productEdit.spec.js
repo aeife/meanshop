@@ -16,8 +16,8 @@ describe( 'shop product edit section', function() {
   });
 
   it('should asign fetched data to scope', inject( function() {
-    $httpBackend.whenGET('/products/123').respond(200, {title: 'Product1'});
-    $httpBackend.whenGET('/categories').respond([{title: 'testCat1'}, {title: 'testCat2'}]);
+    $httpBackend.whenGET('/products/123').respond(200, {title: 'Product1', category: {_id: 1}});
+    $httpBackend.whenGET('/categories').respond([{_id: 1, title: 'testCat1'}, {_id: 2, title: 'testCat2'}]);
 
     $httpBackend.flush();
     expect($scope.product.title).toBe('Product1');

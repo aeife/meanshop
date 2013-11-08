@@ -6,6 +6,8 @@ angular.module( 'store', [
 
 
 .factory('store', function (Product, Category, cart) {
+  var _currentCategory = null;
+
   return {
     getProducts: function(){
       return Product.query();
@@ -26,7 +28,13 @@ angular.module( 'store', [
     getCategories: function(){
       return Category.query();
     },
-    cart: cart
+    cart: cart,
+    getCurrentCategory: function(){
+      return _currentCategory;
+    },
+    setCurrentCategory: function(categoryId){
+      _currentCategory = categoryId;
+    }
   };
 })
 

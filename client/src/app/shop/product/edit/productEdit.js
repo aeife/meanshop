@@ -11,6 +11,8 @@ angular.module( 'meanShop.shop.productEdit', [
   var _categoriesFetched = false;
 
   $scope.product.$promise.then(function(data){
+    store.setCurrentCategory($scope.product.category._id);
+
     _productsFetched = true;
     if (_categoriesFetched){
       setCurrentCategory();

@@ -89,4 +89,10 @@ describe( 'store factory', function() {
     }));
 
   });
+
+  it('should set current category', inject( function() {
+      store.setCurrentCategory(123);
+
+      expect(store.getCurrentCategory()).toBe(123);
+    }));
 });

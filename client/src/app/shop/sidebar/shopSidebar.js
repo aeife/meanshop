@@ -4,7 +4,13 @@ angular.module( 'meanShop.shop.sidebar', [
 
 .controller('ShopSidebarCtrl', function ($scope, store, $state) {
   $scope.categories = store.getCategories();
-  $scope.state = $state;
+  $scope.currentCategory = store.getCurrentCategory;
+
+  store.setCurrentCategory($state.params.category);
+
+  $scope.changeCurrentCategory = function(categoryId){
+    store.setCurrentCategory(categoryId);
+  };
 })
 
 ;
