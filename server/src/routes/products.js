@@ -35,18 +35,27 @@ module.exports = {
     // check if _id is given for query
     var query;
     if (req.body._id){
-      query = {_id: ObjectId.fromString(req.body._id)};
+      // udate
+      Product.update({_id: ObjectId.fromString(req.body._id)}, {title: req.body.title, description: req.body.description, category: req.body.category}, {}, function(err){
+        if (err) {
+          console.log(err);
+          res.send(500);
+        } else {
+          res.send(204);
+        }
+      });
     } else {
-      query = {};
+      var product = new Product({title: req.body.title, description: req.body.description, category: req.body.category});
+      product.save(function(err){
+        if (err) {
+          console.log(err);
+          res.send(500);
+        } else {
+          res.send(204);
+        }
+      });
     }
 
-    Product.update(query, {title: req.body.title, description: req.body.description, category: req.body.category}, {upsert: true}, function(err){
-      if (err) {
-        console.log(err);
-        res.send(500);
-      } else {
-        res.send(204);
-      }
-    });
+
   }
 };
