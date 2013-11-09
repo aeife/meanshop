@@ -104,7 +104,7 @@ angular.module( 'meanShop', [
     url: '/:category',
     controller: 'ProductListCtrl',
     templateUrl: 'shop/product/list/productList.tpl.html',
-    data:{pageTitle: 'PRODUCTLIST'}
+    data:{pageTitle: 'Product'}
   })
   .state('sidebarView.shop.product.new', {
     url: '/product/new',
@@ -123,6 +123,21 @@ angular.module( 'meanShop', [
     controller: 'ProductEditCtrl',
     templateUrl: 'shop/product/edit/productEdit.tpl.html',
     data:{pageTitle: 'Product'}
+  })
+
+  .state('sidebarView.shop.category', {
+    abstract: true,
+    views: {
+      "main": {
+        template: '<ui-view/>'
+      }
+    },
+  })
+  .state('sidebarView.shop.category.new', {
+    url: '/category/new',
+    controller: 'CategoryNewCtrl',
+    templateUrl: 'shop/category/new/categoryNew.tpl.html',
+    data:{pageTitle: 'Category'}
   });
 })
 
