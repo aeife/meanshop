@@ -9,10 +9,11 @@ module.exports = {
   addRoutes: function (app, handlers){
     app.get('/products', handlers.products.getAll);
     app.get('/products/:productId', handlers.products.get);
+    app.post('/products', handlers.products.update);
     app.get('/categories', handlers.categories.getAll);
+    app.post('/categories', handlers.categories.update);
     app.post('/login', handlers.auth.login);
     app.get('/logout', handlers.auth.logout);
     app.get('/auth', handlers.auth.status);
-    app.post('/products', handlers.products.update);
   }
 };
