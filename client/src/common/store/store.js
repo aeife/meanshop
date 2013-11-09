@@ -28,6 +28,13 @@ angular.module( 'store', [
     getCategories: function(){
       return Category.query();
     },
+    addCategory: function(categoryData){
+      var category = new Category(categoryData);
+      return category.$save();
+    },
+    updateCategory: function(categoryData){
+      categoryData.$save();
+    },
     cart: cart,
     getCurrentCategory: function(){
       return _currentCategory;
