@@ -28,6 +28,9 @@ angular.module( 'store', [
     getCategories: function(){
       return Category.query();
     },
+    getCategory: function(categoryId){
+      return Category.get({categoryId: categoryId});
+    },
     addCategory: function(categoryData){
       var category = new Category(categoryData);
       return category.$save();

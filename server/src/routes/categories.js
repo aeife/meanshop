@@ -11,6 +11,15 @@ module.exports = {
       }
     });
   },
+  get: function(req, res){
+    Category.findOne({_id: ObjectId.fromString(req.params.categoryId)}, function (err, category){
+      if (!err) {
+        res.send(category);
+      } else {
+        console.log(err);
+      }
+    });
+  },
   update: function(req, res){
     if (req.body._id){
       // update

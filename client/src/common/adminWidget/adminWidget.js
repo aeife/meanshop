@@ -11,7 +11,8 @@ angular.module('adminWidget', [
 
       // define posible state transitions for edits
       var _transitionsEdit = {
-        'sidebarView.shop.product.detail': 'sidebarView.shop.product.edit'
+        'sidebarView.shop.product.detail': 'sidebarView.shop.product.edit',
+        'sidebarView.shop.product.list': 'sidebarView.shop.category.edit'
       };
 
       $scope.editCurrent = function(){

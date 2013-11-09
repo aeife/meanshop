@@ -138,6 +138,12 @@ angular.module( 'meanShop', [
     controller: 'CategoryNewCtrl',
     templateUrl: 'shop/category/new/categoryNew.tpl.html',
     data:{pageTitle: 'Category'}
+  })
+  .state('sidebarView.shop.category.edit', {
+    url: '/category/:category/edit',
+    controller: 'CategoryEditCtrl',
+    templateUrl: 'shop/category/edit/categoryEdit.tpl.html',
+    data:{pageTitle: 'Category'}
   });
 })
 
