@@ -5,13 +5,14 @@
     "angular": "1.2.0-rc.3",
     "angular-mocks": "1.2.0-rc.3",
     "bootstrap": "3.0.0",
-    "angular-ui-router": "~0.2.0",
     "angular-ui-utils": "~0.0.4",
     "angular-resource": "1.2.0-rc.3",
     "angular-cookies": "~1.0.8",
     "angular-bootstrap": "~0.6.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "angular-ui-router": "0.2.8-bowratic-tedium"
+  },
   "resolutions": {
     "angular": "1.2.0-rc.3"
   }
